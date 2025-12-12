@@ -1,0 +1,57 @@
+import type { ColorTheme, PresetKey } from '@/types/theme';
+
+export const PRESETS: Record<PresetKey, ColorTheme> = {
+  modern: {
+    background: '#ffffff',
+    foreground: '#0f172a',
+    primary: '#2563eb',
+    'primary-foreground': '#ffffff',
+    secondary: '#f1f5f9',
+    'secondary-foreground': '#0f172a',
+    accent: '#f8fafc',
+    'accent-foreground': '#0f172a',
+    muted: '#f1f5f9',
+    'muted-foreground': '#64748b',
+    border: '#e2e8f0',
+  },
+  dark: {
+    background: '#09090b',
+    foreground: '#fafafa',
+    primary: '#fafafa',
+    'primary-foreground': '#18181b',
+    secondary: '#27272a',
+    'secondary-foreground': '#fafafa',
+    accent: '#27272a',
+    'accent-foreground': '#fafafa',
+    muted: '#27272a',
+    'muted-foreground': '#a1a1aa',
+    border: '#27272a',
+  },
+  forest: {
+    background: '#f2fcf5',
+    foreground: '#052e16',
+    primary: '#166534',
+    'primary-foreground': '#ffffff',
+    secondary: '#dcfce7',
+    'secondary-foreground': '#14532d',
+    accent: '#f0fdf4',
+    'accent-foreground': '#166534',
+    muted: '#dcfce7',
+    'muted-foreground': '#15803d',
+    border: '#bbf7d0',
+  },
+  luxury: {
+    background: '#0c0a09',
+    foreground: '#f5f5f4',
+    primary: '#d6d3d1',
+    'primary-foreground': '#1c1917',
+    secondary: '#292524',
+    'secondary-foreground': '#fafaf9',
+    accent: '#44403c',
+    'accent-foreground': '#fafaf9',
+    muted: '#292524',
+    'muted-foreground': '#a8a29e',
+    border: '#44403c',
+  }
+};
+
