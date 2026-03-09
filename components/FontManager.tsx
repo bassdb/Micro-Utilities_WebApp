@@ -58,7 +58,7 @@ export const FontManager = ({
   };
 
   return (
-    <div className="flex flex-col h-full max-h-[calc(100vh-200px)]">
+    <div className="flex flex-col h-full min-h-0">
       <div className="flex flex-col gap-2 mb-4 flex-shrink-0">
         <h2 className="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider">
           Font Family

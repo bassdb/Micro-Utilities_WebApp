@@ -17,14 +17,20 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
   const getStyle = (varName: string) => ({
     [`--${varName}`]: cssVariables[`--${varName}`],
   });
+  const radiusStyle = { borderRadius: 'var(--radius)' };
+  const fixedRadiusStyle = { borderRadius: '0.75rem' }; // fixed frame, like hero container
+  const fixedCardRadiusStyle = { borderRadius: '0.5rem' }; // fixed medium for cards
+  const shadowStyle = { boxShadow: 'var(--shadow-sm)' };
 
   return (
     <div className="space-y-4 mt-4" style={fontStyle}>
       {/* Buttons Section */}
       <div 
-        className="rounded-xl border p-6 shadow-sm"
+        className="border p-6"
         style={{
           ...getStyle('border'),
+          ...fixedRadiusStyle,
+          ...shadowStyle,
           backgroundColor: `hsl(${cssVariables['--background']})`,
           color: `hsl(${cssVariables['--foreground']})`,
           borderColor: `hsl(${cssVariables['--border']})`,
@@ -33,8 +39,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
         <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider opacity-70">Buttons</h3>
         <div className="flex flex-wrap gap-3">
           <button
-            className="px-4 py-2 rounded-md text-sm font-medium transition-all hover:opacity-90"
+            className="px-4 py-2 text-sm font-medium transition-all hover:opacity-90"
             style={{
+              ...radiusStyle,
               backgroundColor: `hsl(${cssVariables['--primary']})`,
               color: `hsl(${cssVariables['--primary-foreground']})`,
             }}
@@ -42,8 +49,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             Primary
           </button>
           <button
-            className="px-4 py-2 rounded-md text-sm font-medium border transition-all hover:opacity-90"
+            className="px-4 py-2 text-sm font-medium border transition-all hover:opacity-90"
             style={{
+              ...radiusStyle,
               backgroundColor: `hsl(${cssVariables['--secondary']})`,
               color: `hsl(${cssVariables['--secondary-foreground']})`,
               borderColor: `hsl(${cssVariables['--border']})`,
@@ -52,8 +60,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             Secondary
           </button>
           <button
-            className="px-4 py-2 rounded-md text-sm font-medium border transition-all hover:opacity-90"
+            className="px-4 py-2 text-sm font-medium border transition-all hover:opacity-90"
             style={{
+              ...radiusStyle,
               borderColor: `hsl(${cssVariables['--border']})`,
               backgroundColor: `hsl(${cssVariables['--background']})`,
               color: `hsl(${cssVariables['--foreground']})`,
@@ -62,8 +71,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             Outline
           </button>
           <button
-            className="px-4 py-2 rounded-md text-sm font-medium transition-all hover:opacity-90 opacity-50"
+            className="px-4 py-2 text-sm font-medium transition-all hover:opacity-90 opacity-50"
             style={{
+              ...radiusStyle,
               backgroundColor: `hsl(${cssVariables['--muted']})`,
               color: `hsl(${cssVariables['--muted-foreground'] || cssVariables['--foreground']})`,
             }}
@@ -75,9 +85,11 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
 
       {/* Badges & Tags Section */}
       <div 
-        className="rounded-xl border p-6 shadow-sm"
+        className="border p-6"
         style={{
           ...getStyle('border'),
+          ...fixedRadiusStyle,
+          ...shadowStyle,
           backgroundColor: `hsl(${cssVariables['--background']})`,
           color: `hsl(${cssVariables['--foreground']})`,
           borderColor: `hsl(${cssVariables['--border']})`,
@@ -86,8 +98,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
         <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider opacity-70">Badges & Tags</h3>
         <div className="flex flex-wrap gap-2">
           <span
-            className="px-2.5 py-0.5 rounded-full text-xs font-medium"
+            className="px-2.5 py-0.5 text-xs font-medium"
             style={{
+              borderRadius: '9999px',
               backgroundColor: `hsl(${cssVariables['--primary']})`,
               color: `hsl(${cssVariables['--primary-foreground']})`,
             }}
@@ -95,8 +108,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             New
           </span>
           <span
-            className="px-2.5 py-0.5 rounded-full text-xs font-medium border"
+            className="px-2.5 py-0.5 text-xs font-medium border"
             style={{
+              borderRadius: '9999px',
               backgroundColor: `hsl(${cssVariables['--secondary']})`,
               color: `hsl(${cssVariables['--secondary-foreground']})`,
               borderColor: `hsl(${cssVariables['--border']})`,
@@ -105,8 +119,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             Featured
           </span>
           <span
-            className="px-2.5 py-0.5 rounded-full text-xs font-medium"
+            className="px-2.5 py-0.5 text-xs font-medium"
             style={{
+              borderRadius: '9999px',
               backgroundColor: `hsl(${cssVariables['--muted']})`,
               color: `hsl(${cssVariables['--muted-foreground'] || cssVariables['--foreground']})`,
             }}
@@ -118,9 +133,11 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
 
       {/* Alerts Section */}
       <div 
-        className="rounded-xl border p-6 shadow-sm"
+        className="border p-6"
         style={{
           ...getStyle('border'),
+          ...fixedRadiusStyle,
+          ...shadowStyle,
           backgroundColor: `hsl(${cssVariables['--background']})`,
           color: `hsl(${cssVariables['--foreground']})`,
           borderColor: `hsl(${cssVariables['--border']})`,
@@ -129,8 +146,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
         <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider opacity-70">Alerts</h3>
         <div className="space-y-3">
           <div
-            className="flex items-start gap-3 p-4 rounded-lg border"
+            className="flex items-start gap-3 p-4 border"
             style={{
+              ...radiusStyle,
               backgroundColor: `hsl(${cssVariables['--muted']})`,
               borderColor: `hsl(${cssVariables['--border']})`,
             }}
@@ -142,8 +160,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             </div>
           </div>
           <div
-            className="flex items-start gap-3 p-4 rounded-lg border"
+            className="flex items-start gap-3 p-4 border"
             style={{
+              ...radiusStyle,
               backgroundColor: `hsl(${cssVariables['--muted']})`,
               borderColor: `hsl(${cssVariables['--border']})`,
             }}
@@ -159,9 +178,11 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
 
       {/* Cards Section */}
       <div 
-        className="rounded-xl border p-6 shadow-sm"
+        className="border p-6"
         style={{
           ...getStyle('border'),
+          ...fixedRadiusStyle,
+          ...shadowStyle,
           backgroundColor: `hsl(${cssVariables['--background']})`,
           color: `hsl(${cssVariables['--foreground']})`,
           borderColor: `hsl(${cssVariables['--border']})`,
@@ -170,8 +191,10 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
         <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider opacity-70">Cards</h3>
         <div className="grid md:grid-cols-2 gap-4">
           <div
-            className="p-4 rounded-lg border transition-all hover:shadow-md"
+            className="p-4 border transition-all hover:shadow-md"
             style={{
+              ...fixedCardRadiusStyle,
+              ...shadowStyle,
               backgroundColor: `hsl(${cssVariables['--background']})`,
               borderColor: `hsl(${cssVariables['--border']})`,
             }}
@@ -180,8 +203,10 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             <p className="text-sm opacity-70">Card description with some details about the content.</p>
           </div>
           <div
-            className="p-4 rounded-lg border transition-all hover:shadow-md"
+            className="p-4 border transition-all hover:shadow-md"
             style={{
+              ...fixedCardRadiusStyle,
+              ...shadowStyle,
               backgroundColor: `hsl(${cssVariables['--secondary']})`,
               borderColor: `hsl(${cssVariables['--border']})`,
               color: `hsl(${cssVariables['--secondary-foreground']})`,
@@ -195,9 +220,11 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
 
       {/* Input Fields Section */}
       <div 
-        className="rounded-xl border p-6 shadow-sm"
+        className="border p-6"
         style={{
           ...getStyle('border'),
+          ...fixedRadiusStyle,
+          ...shadowStyle,
           backgroundColor: `hsl(${cssVariables['--background']})`,
           color: `hsl(${cssVariables['--foreground']})`,
           borderColor: `hsl(${cssVariables['--border']})`,
@@ -210,8 +237,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             <input
               type="text"
               placeholder="Username"
-              className="w-full pl-10 pr-4 py-2 rounded-md border text-sm focus:outline-none focus:ring-2 focus:ring-offset-0"
+              className="w-full pl-10 pr-4 py-2 border text-sm focus:outline-none focus:ring-2 focus:ring-offset-0"
               style={{
+                ...radiusStyle,
                 backgroundColor: `hsl(${cssVariables['--background']})`,
                 borderColor: `hsl(${cssVariables['--border']})`,
                 color: `hsl(${cssVariables['--foreground']})`,
@@ -224,8 +252,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             <input
               type="email"
               placeholder="Email address"
-              className="w-full pl-10 pr-4 py-2 rounded-md border text-sm focus:outline-none focus:ring-2 focus:ring-offset-0"
+              className="w-full pl-10 pr-4 py-2 border text-sm focus:outline-none focus:ring-2 focus:ring-offset-0"
               style={{
+                ...radiusStyle,
                 backgroundColor: `hsl(${cssVariables['--background']})`,
                 borderColor: `hsl(${cssVariables['--border']})`,
                 color: `hsl(${cssVariables['--foreground']})`,
@@ -238,9 +267,11 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
 
       {/* Action Buttons Section */}
       <div 
-        className="rounded-xl border p-6 shadow-sm"
+        className="border p-6"
         style={{
           ...getStyle('border'),
+          ...fixedRadiusStyle,
+          ...shadowStyle,
           backgroundColor: `hsl(${cssVariables['--background']})`,
           color: `hsl(${cssVariables['--foreground']})`,
           borderColor: `hsl(${cssVariables['--border']})`,
@@ -249,8 +280,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
         <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider opacity-70">Action Buttons</h3>
         <div className="flex flex-wrap gap-3">
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all hover:opacity-90"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all hover:opacity-90"
             style={{
+              ...radiusStyle,
               backgroundColor: `hsl(${cssVariables['--primary']})`,
               color: `hsl(${cssVariables['--primary-foreground']})`,
             }}
@@ -259,8 +291,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             Download
           </button>
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium border transition-all hover:opacity-90"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium border transition-all hover:opacity-90"
             style={{
+              ...radiusStyle,
               borderColor: `hsl(${cssVariables['--border']})`,
               backgroundColor: `hsl(${cssVariables['--background']})`,
               color: `hsl(${cssVariables['--foreground']})`,
@@ -270,8 +303,9 @@ export const ExampleSections = ({ cssVariables, selectedFont, selectedWeight, se
             Upload
           </button>
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all hover:opacity-90"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all hover:opacity-90"
             style={{
+              ...radiusStyle,
               backgroundColor: `hsl(${cssVariables['--secondary']})`,
               color: `hsl(${cssVariables['--secondary-foreground']})`,
             }}

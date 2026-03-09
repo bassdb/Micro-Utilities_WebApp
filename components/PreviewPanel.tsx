@@ -23,15 +23,17 @@ export const PreviewPanel = ({ cssVariables, selectedFont, selectedWeight, selec
   };
 
   return (
-    <div className="space-y-4" style={fontStyle}>
-      {/* Main Hero Preview Card */}
+    <div className="space-y-4" style={{ ...fontStyle, ...cssVariables }}>
+      {/* Main Hero Preview Card - fixed radius (0.75rem) like ExampleSections frames; inner elements use var(--radius) for demo */}
       <div 
-        className="border border-[color:var(--border)] rounded-xl overflow-hidden shadow-2xl transition-colors duration-500 min-h-[600px] flex flex-col"
+        className="border border-[color:var(--border)] overflow-hidden transition-colors duration-500 min-h-[600px] flex flex-col"
         style={{
           ...cssVariables,
           backgroundColor: `hsl(${cssVariables['--background']})`,
           color: `hsl(${cssVariables['--foreground']})`,
           borderColor: `hsl(${cssVariables['--border']})`,
+          borderRadius: '0.75rem',
+          boxShadow: 'var(--shadow-lg)',
           ...fontStyle,
         }}
       >
@@ -43,8 +45,9 @@ export const PreviewPanel = ({ cssVariables, selectedFont, selectedWeight, selec
           <span className="cursor-pointer hover:opacity-100">Features</span>
           <span className="cursor-pointer hover:opacity-100">Pricing</span>
           <button 
-            className="px-4 py-2 rounded-md text-sm font-medium transition-transform active:scale-95"
+            className="px-4 py-2 text-sm font-medium transition-transform active:scale-95"
             style={{
+              borderRadius: 'var(--radius)',
               backgroundColor: `hsl(${cssVariables['--primary']})`,
               color: `hsl(${cssVariables['--primary-foreground']})`,
             }}
@@ -56,9 +59,10 @@ export const PreviewPanel = ({ cssVariables, selectedFont, selectedWeight, selec
 
       {/* Mock Hero */}
       <div className="flex-1 p-12 flex flex-col items-center justify-center text-center max-w-2xl mx-auto space-y-8">
-        <div 
-          className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium border border-[color:var(--border)]"
+        <div
+          className="inline-flex items-center px-3 py-1 text-sm font-medium border border-[color:var(--border)]"
           style={{
+            borderRadius: '9999px',
             backgroundColor: `hsl(${cssVariables['--secondary']})`,
             color: `hsl(${cssVariables['--secondary-foreground']})`,
           }}
@@ -79,18 +83,21 @@ export const PreviewPanel = ({ cssVariables, selectedFont, selectedWeight, selec
         </p>
 
         <div className="flex gap-4">
-          <button 
-            className="px-8 py-3 rounded-lg text-base font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+          <button
+            className="px-8 py-3 text-base font-semibold hover:shadow-xl transition-all hover:-translate-y-0.5"
             style={{
+              borderRadius: 'var(--radius)',
+              boxShadow: 'var(--shadow-lg)',
               backgroundColor: `hsl(${cssVariables['--primary']})`,
               color: `hsl(${cssVariables['--primary-foreground']})`,
             }}
           >
             Start Building
           </button>
-          <button 
-            className="px-8 py-3 rounded-lg text-base font-semibold border transition-all hover:bg-black/5 dark:hover:bg-white/5"
+          <button
+            className="px-8 py-3 text-base font-semibold border transition-all hover:bg-black/5 dark:hover:bg-white/5"
             style={{
+              borderRadius: 'var(--radius)',
               borderColor: `hsl(${cssVariables['--border']})`,
               backgroundColor: `hsl(${cssVariables['--background']})`,
               color: `hsl(${cssVariables['--foreground']})`,
@@ -101,19 +108,20 @@ export const PreviewPanel = ({ cssVariables, selectedFont, selectedWeight, selec
         </div>
       </div>
 
-      {/* Mock Feature Cards */}
+      {/* Mock Feature Cards - fixed medium radius (0.5rem) */}
       <div className="grid md:grid-cols-3 gap-6 p-8 border-t border-[color:var(--border)] bg-[color:var(--muted)]/20">
         {features.map((feature, i) => (
           <div 
             key={i}
-            className="p-6 rounded-xl border border-[color:var(--border)] shadow-sm hover:shadow-md transition-all"
-            style={{ backgroundColor: `hsl(${cssVariables['--background']})` }}
+            className="p-6 border border-[color:var(--border)] hover:shadow-md transition-all"
+            style={{ backgroundColor: `hsl(${cssVariables['--background']})`, borderRadius: '0.5rem', boxShadow: 'var(--shadow-sm)' }}
           >
-            <div 
-              className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+            <div
+              className="w-10 h-10 flex items-center justify-center mb-4"
               style={{
+                borderRadius: '0.5rem',
                 backgroundColor: `hsl(${cssVariables['--secondary']})`,
-                color: `hsl(${cssVariables['--secondary-foreground']})`
+                color: `hsl(${cssVariables['--secondary-foreground']})`,
               }}
             >
               <feature.icon className="w-5 h-5" />

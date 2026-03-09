@@ -31,5 +31,12 @@ export type ThemeConfig = {
   dark: ColorTheme;
 };
 
+export type ShadowPresetKey = 'none' | 'subtle' | 'medium' | 'strong';
+
+export type BaseTheme = {
+  radius: string;
+  shadowPreset: ShadowPresetKey;
+};
+
 export type CSSVariables = Record<string, string>;
 

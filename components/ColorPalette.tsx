@@ -1,11 +1,10 @@
-import { Moon, Sun, RefreshCcw } from 'lucide-react';
+import { RefreshCcw } from 'lucide-react';
 import { ColorCard } from './ColorCard';
 import type { ColorTheme } from '@/types/theme';
 
 interface ColorPaletteProps {
   isDark: boolean;
   activeColors: ColorTheme;
-  onToggleDark: () => void;
   onColorChange: (key: string, value: string) => void;
   onRandomize: () => void;
 }
@@ -13,7 +12,6 @@ interface ColorPaletteProps {
 export const ColorPalette = ({ 
   isDark, 
   activeColors, 
-  onToggleDark, 
   onColorChange,
   onRandomize 
 }: ColorPaletteProps) => {
@@ -27,14 +25,7 @@ export const ColorPalette = ({
           <span className="text-[10px] text-slate-500">Editing {isDark ? '.dark' : ':root'}</span>
         </div>
         
-        <div className="flex items-center gap-1">
-          <button
-            onClick={onToggleDark}
-            className="p-2 text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-slate-800 rounded-full transition-colors"
-            title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
+        <div className="flex items-center justify-end">
           <button 
             onClick={onRandomize}
             className="p-2 text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-slate-800 rounded-full transition-colors"
