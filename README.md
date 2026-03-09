@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Micro Utilities
 
-## Getting Started
+> Kleine Tools, große Hilfe — Eine Sammlung nützlicher Mikro-Utilities für Entwickler.
 
-First, run the development server:
+A collection of lightweight web-based developer tools: theme generators, converters, formatters, and more. Built with Next.js and Tailwind CSS.
+
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
+
+---
+
+## ✨ Features
+
+### 🎨 Tailwind Theme Generator (Available)
+
+Create custom color schemes and font configurations for Tailwind CSS with a visual editor:
+
+- **Colors** — Edit primary, secondary, accent, background, foreground, muted, and border colors
+- **Light & Dark Mode** — Separate palettes for each theme
+- **Radius Presets** — None, sm, md, lg, xl, 2xl, full
+- **Shadow Presets** — None, subtle, medium, strong
+- **Typography** — Choose from 20+ Google Fonts with weight and style options
+- **Live Preview** — See components (buttons, cards, inputs, alerts) update in real time
+- **Export** — Copy CSS variables directly for `tailwind.config.js` or `globals.css`
+
+### 🔜 Coming Soon
+
+- Hash Generator (MD5, SHA-256, etc.)
+- JSON Formatter
+- Image Optimizer
+- Code Snippets
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm, pnpm, or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/micro-utilities.git
+cd micro-utilities
+
+# Install dependencies
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build & Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build for production
+npm run build
 
-## Learn More
+# Start production server
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 16 (App Router) |
+| UI | React 19 |
+| Styling | Tailwind CSS 4 |
+| State | Zustand |
+| Components | Radix UI, Lucide Icons |
+| Language | TypeScript 5 |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+├── app/
+│   ├── page.tsx                    # Home / utility overview
+│   ├── tailwind-theme-generator/   # Theme generator route
+│   └── layout.tsx
+├── components/
+│   ├── ColorPalette.tsx
+│   ├── ExampleSections.tsx         # Preview component demos
+│   ├── FontManager.tsx
+│   ├── PreviewPanel.tsx
+│   └── ...
+├── constants/
+│   ├── base-presets.ts             # Radius & shadow presets
+│   └── google-fonts.ts
+├── stores/
+│   └── theme-store.ts              # Zustand theme state
+├── types/
+│   └── theme.ts
+└── lib/
+    └── color-utils.ts
+```
+
+---
+
+## 📜 License
+
+MIT
